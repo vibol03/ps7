@@ -24,6 +24,11 @@ and open the template in the editor.
     padding: 5px;
 }
 
+// the error label is generated with a class name "error"
+.error{
+    color:red;
+}
+
 
 //highlight the error message to be red
 label{
