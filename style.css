@@ -1,0 +1,32 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 3, 2015, 4:54:42 PM
+    Author     : vibol
+*/
+
+/*give the first row a blackground to make it easier to look at*/ 
+#firstrow{
+    background-color: black;
+    color: white;
+}
+/*same as above except, this one is for first column*/
+#table1 tr td:first-child{
+    background-color: black;
+    color: white;
+}
+
+// give some padding to the table, so they dont look cramped up
+#table1 tr td{
+    padding: 5px;
+}
+
+
+//highlight the error message to be red
+label{
+    color:red;
+};
+

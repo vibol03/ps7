@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!--Assignment 07-->
+<!--November 03, 2015-->
+<!--Multiplication Table with jQuery plugin-->
+<!--Phuminvibol Lee-->
+<html>
+    <head>
+        <title>Miltiplication Table!</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="script.js" type="text/javascript"></script>  
+        <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="jquery.validate.js"></script>
+        
+    </head>
+    
+    <body>        
+        <form method="get" action="javascript:buildMultiplicationTable()" onsubmit="return validateInput()" id="form1">                      
+            <table id="inputTable">
+                <tr>
+                    <td>
+                        <div>Vertical Numbers</div>
+                        Start:<br>
+                        <input type="text" name="horizontalStart" id="horizontalStart" /><br>
+                        End:<br>
+                        <input type="text" name="horizontalEnd" id="horizontalEnd" /><br>
+                    </td>
+                    <td>
+                        <div>Horizontal Numbers</div>
+                        Start:<br>
+                        <input type="text" name="verticalStart" id="verticalStart" /><br>
+                        End:<br>
+                        <input type="text" name="verticalEnd" id="verticalEnd" /><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>                    
+                        <input type="submit" name="submit">                                  
+                    </td>
+                    <td>
+
+                    </td>
+                </tr>
+            </table>
+        </form>
+<!--       this script will be called after the form has bee generated,
+           note that i use "rules" as the argument, and each field inside of rules, is the field that is on the page
+           .validate() function takes care of these according the fields in rules-->
+        <script>
+            $("#form1").validate(
+                    {
+                        rules: {
+                            horizontalStart: {
+                                required: true,
+                                number: true,
+                                max:100,
+                                min:-100
+                                
+                            },
+                            horizontalEnd: {
+                                required: true,
+                                number: true,
+                                max:100,
+                                min:-100,
+                            },                            
+                            verticalStart: {
+                                required: true,
+                                number: true,
+                                max:100,
+                                min:-100
+                            },
+                            verticalEnd: {
+                                required: true,
+                                number: true,
+                                max:100,
+                                min:-100
+                            }
+                        }
+                    });
+        </script>
+        
+        <!--javascript will find this div and replace the content inside with the generated table-->
+        <div id="mulTable">
+
+        </div>
+        
+        
+    </body>
+    
+</html>
